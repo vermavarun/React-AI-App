@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class EmployeeContext : DbContext
 {
 
-    public DbSet<Employee> Posts { get; set; }
+    public DbSet<Employee> Employees { get; set; }
 
     public string DbPath { get; }
 

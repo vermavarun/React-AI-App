@@ -15,9 +15,10 @@ public class HomeController : ControllerBase
     }
 
     [HttpGet(Name = "/")]
-    public string Get()
+    public List<Employee> Get()
     {
-       return "Hey from .net!";
+       using var db = new EmployeeContext();
+         return db.Employees.ToList();
     }
 
     [HttpPost(Name = "/")]
