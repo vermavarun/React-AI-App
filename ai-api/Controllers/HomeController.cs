@@ -19,4 +19,16 @@ public class HomeController : ControllerBase
     {
        return "Hey from .net!";
     }
+
+    [HttpPost(Name = "/")]
+    public int Post(string employeeName)
+    {
+        using var db = new EmployeeContext();
+        Employee emp = new Employee();
+        emp.EmployeeName = employeeName;
+        db.Add(emp);
+        db.SaveChanges();
+
+       return emp.EmployeeId;
+    }
 }
