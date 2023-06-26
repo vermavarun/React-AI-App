@@ -1,8 +1,12 @@
 // https://create-react-app.dev/docs/getting-started
 // https://stackabuse.com/get-http-request-in-react/
+// https://blog.logrocket.com/using-react-toastify-style-toast-messages/
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [message, setMessage] = useState([]);
@@ -30,10 +34,17 @@ function App() {
         //setMessage("Emp Added with id: " + response.data);
         GetEmployees();
         event.target.empName.value="";
+        showToastMessage();
       })
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const showToastMessage = () => {
+    toast.success('Success Notification !', {
+        position: toast.POSITION.TOP_RIGHT
+    });
   };
 
   return (
@@ -45,9 +56,11 @@ function App() {
             <label>Enter Name </label>
             <input type="text" name="empName"></input>
             <input type="submit" />
+
           </form>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }
