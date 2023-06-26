@@ -18,7 +18,8 @@ function App() {
     axios
       .get("http://localhost:5200")
       .then((response) => {
-        setMessage(JSON.stringify(response.data));
+        var result = response.data.map(x=>x.employeeName).join(", ")
+        setMessage(result);
       })
       .catch((err) => {
         console.log(err);
