@@ -55,6 +55,7 @@ function App() {
         //GetEmployees();
         div.innerHTML += "<div class='ai-r'> AI: " + response.data + "</div>";
         event.target.prompt.value = "";
+        div.scrollTop = div.scrollHeight;
       })
       .catch((err) => {
         console.log(err);

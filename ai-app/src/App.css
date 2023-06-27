@@ -52,11 +52,13 @@
 
 .chatbox {
   min-width: 500px;
-  min-height: 500px;
+  max-height: 200px;
+  height: 200px;
   background-color: #f3ebeb;
   border: 1px solid grey;
   margin: 2%;
   text-align: justify;
+  overflow-y: scroll;
 }
 
 textarea {
