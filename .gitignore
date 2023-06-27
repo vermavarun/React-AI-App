@@ -1,3 +1,6 @@
 ai-api/bin
 ai-api/obj
 ai-app/nodemodules
+python/pyvenv.cfg
+python/bin
+python/lib

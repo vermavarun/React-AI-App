@@ -28,7 +28,7 @@
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 18px;
   color: #818181;
   display: block;
 }
@@ -38,14 +38,41 @@
 }
 
 .main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
+   /* Same as the width of the sidenav */
+  font-size: 18px; /* Increased text to enable scrolling */
   padding: 0px 10px;
   text-align: center;
-  
+
 }
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+.chatbox {
+  min-width: 500px;
+  min-height: 500px;
+  background-color: #f3ebeb;
+  border: 1px solid grey;
+  margin: 2%;
+  text-align: justify;
+}
+
+textarea {
+  min-width: 50%;
+  min-height: 100px;
+}
+
+.you-r,.ai-r {
+  display: block;
+  border-radius: 2px;
+  margin: 5px;
+}
+
+.you-r {
+  background-color:bisque;
+}
+.ai-r {
+  background-color:rgb(245 230 212);
 }
