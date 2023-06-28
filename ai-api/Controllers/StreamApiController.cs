@@ -1,11 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Azure;
-using Azure.AI.OpenAI;
-using System.Net;
-using System.Text;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Text.Json.Nodes;
 using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.StaticFiles;
 
