@@ -4,3 +4,4 @@ ai-app/nodemodules
 python/pyvenv.cfg
 python/bin
 python/lib
+.DS_Store

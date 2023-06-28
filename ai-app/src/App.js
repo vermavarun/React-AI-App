@@ -9,6 +9,25 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  function playvideo() {
+    const vp = document.getElementById("videoplayer");
+    vp.play();
+  }
+  useEffect(()=> {
+
+    const vp = document.getElementById("videoplayer");
+    axios
+      .get("http://localhost:5200/video", {responseType: 'blob' })
+      .then((response) => {
+        var blob = new Blob([response.data])
+        vp.src = URL.createObjectURL(blob);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+  },[]);
+
   // const [message, setMessage] = useState([]);
   // useEffect(() => {
   //   GetEmployees();
@@ -87,6 +106,13 @@ function App() {
             </div>
           </form>
         </div>
+      </div>
+      {/* https://img.ly/blog/how-to-stream-videos-using-javascript-and-html5/ */}
+      <div className="videomain">
+        <video  id="videoplayer" width="500px" height="300px"  onContextMenu={e => e.preventDefault()}>
+
+        </video>
+        <button onClick={playvideo}>Play</button>
       </div>
       <ToastContainer />
     </div>
